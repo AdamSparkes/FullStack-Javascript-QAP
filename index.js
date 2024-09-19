@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+
 const { program } = require('commander');
 
 // Function to generate the password
@@ -8,7 +9,7 @@ function generatePassword(length, includeNumbers, includeUppercase, includeSymbo
     const numbers = '0123456789';
     const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const symbols = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
-    
+
     let characters = lower;
     if (includeNumbers) characters += numbers;
     if (includeUppercase) characters += uppercase;
@@ -21,6 +22,7 @@ function generatePassword(length, includeNumbers, includeUppercase, includeSymbo
     }
     return password;
 }
+
 // CLI definition
 program
     .name('password-generator')
@@ -35,13 +37,22 @@ program
 // Parse flags and arguments
 const options = program.opts();
 const length = parseInt(options.length);
-const includeNumbers = options.numbers || false;
-const includeUppercase = options.uppercase || false;
-const includeSymbols = options.symbols || false;
+
+// Convert flags to booleans
+const includeNumbers = !!options.numbers;
+const includeUppercase = !!options.uppercase;
+const includeSymbols = !!options.symbols;
+
+// Validate length input
+if (isNaN(length) || length < 1) {
+    console.error('Error: Length must be a positive number');
+    process.exit(1);
+}
 
 // Generate and display the password
-console.log(`Generated Password: ${generatePassword(length, includeNumbers, includeUppercase, includeSymbols)}`);
+const generatedPassword = generatePassword(length, includeNumbers, includeUppercase, includeSymbols);
+console.log(`Generated Password: ${generatedPassword}`);
 
 
 
-//TEST
+
