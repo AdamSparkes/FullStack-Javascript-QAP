@@ -8,7 +8,7 @@
   "keywords": [],
   "author": "Adam Sparkes",
   "license": "ISC",
-  "description": "",
+  "description": "A simple program to generate a completely random password with variable numbers upper and lowercase letters and symbols.",
   "dependencies": {
     "commander": "^12.1.0"
   }
