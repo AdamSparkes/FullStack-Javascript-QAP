@@ -41,3 +41,7 @@ const includeSymbols = options.symbols || false;
 
 // Generate and display the password
 console.log(`Generated Password: ${generatePassword(length, includeNumbers, includeUppercase, includeSymbols)}`);
+
+
+
+//TEST
