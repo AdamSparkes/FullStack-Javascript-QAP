@@ -1,15 +1,14 @@
 {
   "name": "fsj-qap",
   "version": "1.0.0",
+  "description": "A CLI tool for generating secure passwords",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "password-generator": "./index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "commander": "^12.1.0"
-  }
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Adam Sparkes",
+  "license": "ISC"
 }
